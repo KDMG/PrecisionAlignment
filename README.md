@@ -41,3 +41,9 @@ pip install -U pm4py
 2) Copy the script "[precision_alignment.py](https://github.com/KDMG/PrecisionAlignment/blob/main/precision_alignment.py)" ref inside the folder `pm4py/algo/evaluation/precision/variants/`.
 
 3) Add the variant inside the `pm4py/algo/evaluation/precision/algorithm.py` file.
+
+## Contributors
+| Contributor name | Contacts |
+| :-------- | :------- | 
+| `Chiara Gobbi`           | c.gobbi@pm.univpm.it   | 
+
