@@ -1,4 +1,4 @@
-# PrecisionAlignment
+# Precision Alignment
 
 In this repository we provide a faithful implementation for computing precision 1-alignment based of Petri nets with respect to an event log, following the approach proposed in the paper "[Measuring precision of modeled behavior](https://link.springer.com/article/10.1007/s10257-014-0234-7)".
 
