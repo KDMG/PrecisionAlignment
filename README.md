@@ -21,12 +21,12 @@ Consider the following process model, log and projected alignments.
 
 | Process model| Projected alignments|
 | :---: | :---: |
-|<img src="https://github.com/chiaragii/PrecisionAlignment/blob/main/example/model_example.png" width="400"> | <img src="https://github.com/chiaragii/PrecisionAlignment/blob/main/example/log_example.png" width="400"> | 
+|<img src="https://github.com/KDMG/PrecisionAlignment/blob/main/example/model_example.png" width="400"> | <img src="https://github.com/KDMG/PrecisionAlignment/blob/main/example/log_example.png" width="400"> | 
 
 The corresponding automaton is:
 
 <p align="center">
-<img src="https://github.com/chiaragii/PrecisionAlignment/blob/main/example/automaton_example.png" width="500">
+<img src="https://github.com/KDMG/PrecisionAlignment/blob/main/example/automaton_example.png" width="500">
 </p>
 
 therefore, $a_p = \frac{5⋅1 + 5⋅3 + 2⋅2 + 1⋅1 +1⋅1 +1⋅1 +1⋅1 +1⋅1 +1⋅1 +2⋅1 +2⋅1}{5⋅1 + 5⋅3 + 2⋅2 + 1⋅3 +1⋅2 +1⋅3 +1⋅3 +1⋅1 +1⋅3 +2⋅1 +2⋅1} = \frac{34}{43} = 0.79$
