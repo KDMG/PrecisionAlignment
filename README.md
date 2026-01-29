@@ -2,7 +2,7 @@
 
 In this repository we provide a faithful implementation for computing precision 1-alignment based of Petri nets with respect to an event log, following the approach proposed in the paper "[Measuring precision of modeled behavior](https://link.springer.com/article/10.1007/s10257-014-0234-7)".
 
-A brief description of the approach is described below:
+A brief description of the algorithm is provided below:
 
 1) For each trace $\sigma_L$ in the log $L$, compute one optimal alignment $\gamma = \Lambda^{1}(\sigma_L)$, and let $\Lambda^{1}$ denote the multiset of these alignments over all traces in $L$.
 
