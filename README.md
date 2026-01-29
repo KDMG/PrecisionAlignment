@@ -1,25 +1,25 @@
 # PrecisionAlignment
 
-In this repository we provide a faithful implementation for computing precision of Petri nets with respect to an event log, following the approach proposed in the paper "[Measuring precision of modeled behavior](https://link.springer.com/article/10.1007/s10257-014-0234-7)".
+In this repository we provide a faithful implementation for computing precision 1-alignment based of Petri nets with respect to an event log, following the approach proposed in the paper "[Measuring precision of modeled behavior](https://link.springer.com/article/10.1007/s10257-014-0234-7)".
 
-## Use of code
-Integration with Pm4py
+A brief description of the approach is described below:
 
-## Computing precision
-The steps for computing the precision are:
-1) compute one optimal alignment for each trace in the log, $\Lambda$ is the set of alignments;
-2) project the alignment to moves on model and synchronous moves only to obtain a fully compliant sequence of activities, $\bar \Lambda$ is the set of projected alignments;
-3) build the automaton $A$ considering all the prefixes for the sequences in the projected alignments $\bar \Lambda$ as states;
-4) compute weight for each state of the automaton $\omega(s) = \sum_{\forall \gamma \in \bar \Lambda} \omega(\gamma)$, where $\omega(\gamma)$ is the frequence of a sequence in $\bar \Lambda$;
-5) For each state, compute the set of its available actions, i.e. possible direct successor activities according to the model ($a_v$) and them compare it with the set of executed actions, i.e. activities really executed in the traces ($e_v$);
+1) For each trace $\sigma_L$ in the log $L$, compute one optimal alignment $\gamma = \Lambda^{1}(\sigma_L)$, and let $\Lambda^{1}$ denote the multiset of these alignments over all traces in $L$.
+
+2) Project each alignment $\gamma$ to model behavior only (model moves and synchronous moves), obtaining a fully compliant sequence $\bar{\lambda}(\gamma)$. Let $\bar{\lambda}(\Lambda^{1})$ be the multiset of projected sequences.
+
+3) Build the alignment automaton $A_A=(Q,\Sigma,\delta,\epsilon,\omega)$, where $Q$ contains all prefixes of the sequences in $\bar{\lambda}(\Lambda^{1})$, $\epsilon$ is the empty prefix, and $\delta$ is the prefix transition function.
+
+4) Assign a weight for each state $s \in Q$ of the automaton $A_A$ as $\omega(s) = \sum_{\forall \gamma \in \bar \Lambda} \omega(\gamma)$, where $\omega(\gamma)$ is the frequence of a sequence in $\bar \Lambda$;
+
+5) For each state, compute the set of its available actions, i.e. possible direct successor activities according to the model ($a_v$) and then compare it with the set of executed actions, i.e. activities really executed in the traces ($e_x$);
+
 6) Compute precision for automaton $A$ as follows:  $a_p = \frac{\sum_{s}\omega (s) \cdot |e_x(s)|}{\sum_{s}\omega (s) \cdot |a_v(s)|}$.
 
-We refer to the paper for additional details.
-
 ### Example
-For example, consider the following process model, log and projected alignments.
+Consider the following process model, log and projected alignments.
 
-| Process Model| Event log and alignments|
+| Process model| Projected alignments|
 | :---: | :---: |
 |<img src="https://github.com/chiaragii/PrecisionAlignment/blob/main/example/model_example.png" width="400"> | <img src="https://github.com/chiaragii/PrecisionAlignment/blob/main/example/log_example.png" width="400"> | 
 
@@ -30,3 +30,14 @@ The corresponding automaton is:
 </p>
 
 therefore, $a_p = \frac{5⋅1 + 5⋅3 + 2⋅2 + 1⋅1 +1⋅1 +1⋅1 +1⋅1 +1⋅1 +1⋅1 +2⋅1 +2⋅1}{5⋅1 + 5⋅3 + 2⋅2 + 1⋅3 +1⋅2 +1⋅3 +1⋅3 +1⋅1 +1⋅3 +2⋅1 +2⋅1} = \frac{34}{43} = 0.79$
+
+
+## How to use
+
+1) Install PM4Py
+```bash
+pip install -U pm4py
+```
+2) Copy the script ref inside the folder `pm4py/algo/evaluation/precision/variants/`
+
+3) Add the variant inside the `pm4py/algo/evaluation/precision/algorithm.py` file 
