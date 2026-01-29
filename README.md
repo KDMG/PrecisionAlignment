@@ -42,7 +42,7 @@ pip install -U pm4py
 
 3) Add the variant inside the `pm4py/algo/evaluation/precision/algorithm.py` file.
 
-## Contributors
+## Contact information
 | Contributor name | Contacts |
 | :-------- | :------- | 
 | `Chiara Gobbi`           | c.gobbi@pm.univpm.it   | 
