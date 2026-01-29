@@ -34,10 +34,10 @@ therefore, $a_p = \frac{5⋅1 + 5⋅3 + 2⋅2 + 1⋅1 +1⋅1 +1⋅1 +1⋅1 +1⋅
 
 ## How to use
 
-1) Install PM4Py
+1) Install PM4Py with pip
 ```bash
 pip install -U pm4py
 ```
-2) Copy the script ref inside the folder `pm4py/algo/evaluation/precision/variants/`
+2) Copy the script "[precision_alignment.py](https://github.com/KDMG/PrecisionAlignment/blob/main/precision_alignment.py)" ref inside the folder `pm4py/algo/evaluation/precision/variants/`.
 
-3) Add the variant inside the `pm4py/algo/evaluation/precision/algorithm.py` file 
+3) Add the variant inside the `pm4py/algo/evaluation/precision/algorithm.py` file.
